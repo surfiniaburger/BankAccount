@@ -20,9 +20,10 @@ fun main(args: Array<String>) {
             1 -> "debit"
             2 -> "credit"
             3 -> "checking"
-            else -> continue
+            else -> continue // Add a continue statement to move to the next iteration of the loop without doing anything else. This means that no bank account is created because the user’s input is invalid.
         }
     }
+    println("You have created a $accountType account.")
 
 
 }
