@@ -33,3 +33,5 @@ For a money transfer, use conditional statements to select the bank account’s 
 
 Use when expressions to choose the right bank account operation from the list of valid bank account operations. 
 
+## Manage the bank account based on the user interface option
+![img_3.png](img_3.png)

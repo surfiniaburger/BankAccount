@@ -95,6 +95,64 @@ fun main(args: Array<String>) {
     output = creditDeposit(money)
     println("The amount you deposited is $output dollars.")
 
+    // Step 14: Implementing a function to handle the transfer logic of withdrawals and deposits for checking, debit and credit accounts.
+    fun transfer(mode: String) {
+        val transferAmount: Int
+
+        when (mode) {
+            "withdraw" -> {
+                transferAmount = if (accountType == "debit") {
+                    debitWithdraw(money)
+                } else {
+                    withdraw(money)
+                }
+                println("The amount you withdrew is $transferAmount dollars.")
+            }
+            "deposit" -> {
+                transferAmount = if (accountType == "credit") {
+                    creditDeposit(money)
+                } else {
+                    deposit(money)
+                }
+                println("The amount you deposited is $transferAmount dollars.")
+            }
+
+            // The else case handles all values of the mode parameter that other cases don’t handle.
+            else -> return // This means that no account transfer happens because the mode of the account transfer isn’t valid, it is neither deposit nor withdrawal.
+        }
+    }
+
+    // Step 15: This step created variables that store the bank system interface’s status and the option that the user selects from the console
+    var isSystemOpen= true
+    var option = 0
+
+    // Step 16: Next, manage the bank account and the specific operations based on the user’s input.
+    while (isSystemOpen) {
+        println("What would you like to do?")
+        println("1. Check bank account balance")
+        println("2. Withdraw money")
+        println("3. Deposit money")
+        println("4. Close the system")
+        println("Which option do you choose? (1, 2, 3 or 4)")
+
+        option = (1..5).random()
+        println("The selected option is ${option}.")
+
+        when (option) {
+            1 -> println("The current balance is $accountBalance dollars.")
+            2 -> transfer("withdraw")
+            3 -> transfer("deposit")
+            4 -> {
+                isSystemOpen = false
+                println("The system is closed")
+            }
+
+            // The else case handles all values of the option variable that other cases don’t handle.
+            else -> continue
+        }
+    }
+
+
 
 
 
