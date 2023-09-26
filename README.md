@@ -1,5 +1,5 @@
 # BankAccount
-##Project details
+
 The project is divided into three parts. Each part gives you full guidance, feedback and solutions.
 The sequence and the content of the three project parts simulate the type of software development progression that would happen in a real-world build of such an app.
 
